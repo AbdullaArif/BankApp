@@ -26,7 +26,7 @@
                 Console.WriteLine("3.Credit report");
                 choose = int.Parse(Console.ReadLine());
 
-            yenisecim:
+            newChoose:
                 switch (choose)
                 {
                     case 1:
@@ -50,7 +50,7 @@
                         Console.WriteLine("2.credit payment");
                         Console.WriteLine("3.Credit report");
                         choose = int.Parse(Console.ReadLine());
-                        goto yenisecim;
+                        goto newChoose;
                         break;
 
                     case 2:
@@ -63,14 +63,14 @@
                             Console.WriteLine("2.credit payment");
                             Console.WriteLine("3.Credit report");
                             choose = int.Parse(Console.ReadLine());
-                            goto yenisecim;
+                            goto newChoose;
                         }
                         else
                         {
                             Console.WriteLine("credit payment");
                             Console.WriteLine("Click 1 to pay a loan");
-                            int secim2 = int.Parse(Console.ReadLine());
-                            if (secim2 == 1)
+                            int choose2 = int.Parse(Console.ReadLine());
+                            if (choose2 == 1)
                             {
                                 Console.WriteLine("credit payment");
                                 monthlyPayment = totalAmount / month;
@@ -80,35 +80,35 @@
                                 remainingMonth = month - 1;
                                 Console.WriteLine("Remaining Month:" + " " + remainingMonth);
                             }
-                            else if (secim2 != 1)
+                            else if (choose2 != 1)
                             {
                                 Console.WriteLine("Failed operation");
                             }
                         }
 
-                    yeniOdenis:
+                    newPayment:
                         Console.WriteLine("Want to make a new remaining?");
                         Console.WriteLine("1.Yes");
                         Console.WriteLine("2.No");
-                        int yeniOdenis = 0;
-                        yeniOdenis = int.Parse(Console.ReadLine());
-                        if (yeniOdenis == 1)
+                        int newPayment = 0;
+                        newPayment = int.Parse(Console.ReadLine());
+                        if (newPayment == 1)
                         {
                             Console.WriteLine("Remaining Month:" + monthlyPayment);
                             debt = debt - monthlyPayment;
                             Console.WriteLine("Debt:" + debt);
                             remainingMonth--;
                             Console.WriteLine("residual month:" + remainingMonth);
-                            goto yeniOdenis;
+                            goto newPayment;
                         }
-                        else if (yeniOdenis == 2)
+                        else if (newPayment == 2)
                         {
                             Console.WriteLine("Credit menu :");
                             Console.WriteLine("1.Getting a loan");
                             Console.WriteLine("2.credit payment");
                             Console.WriteLine("3.Credit report");
                             choose = int.Parse(Console.ReadLine());
-                            goto yenisecim;
+                            goto newChoose;
                         }
                         break;
 
@@ -123,7 +123,7 @@
                             Console.WriteLine("2.credit payment");
                             Console.WriteLine("3.Credit report");
                             choose = int.Parse(Console.ReadLine());
-                            goto yenisecim;
+                            goto newChoose;
                         }
                         else
                         {
